@@ -20,9 +20,9 @@
 </head>
 
 <body>
-	<div class="h1 container" id="login_h1">
-		Museum View Hotel
-	</div>
+	<!-- <div class="h1 container" id="login_h1"> -->
+		<h1 class="h1 container" id="login_h1">Museum View Hotel</h1>
+	<!-- </div> -->
 	<div class="limiter">
 		<div class="container-login100">
 			<!-- <div class="h1" style="color:white;margin-left:0%;padding-right: 15%;margin-top: 0%;position: relative;;">
