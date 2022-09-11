@@ -1,0 +1,24 @@
+body {
+    background-image: url('../images/bg-01.jpg');
+    background-repeat: round;
+    background-size: cover;
+    max-height: 100%;
+}
+
+#login_h1 {
+    margin-bottom: -50px;
+    font-weight: bolder;
+    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+    background-attachment: inherit;
+    text-shadow: 10px aliceblue;
+}
+
+select{
+    border: 0ch;
+}
+#showPwd{
+    position: relative;
+    background-color: inherit;
+}
