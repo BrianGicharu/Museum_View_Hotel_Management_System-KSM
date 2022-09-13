@@ -1,0 +1,17 @@
+foreach ($_POST('usrtype') as $selection) {
+							if ($selection === 'Reception') {
+								header("Location:./route/reception.php");
+								break;
+							}
+							if ($selection === 'Admin') {
+								header("Location:./route/reception.php");
+								break;
+							}
+							if ($selection === 'Store') {
+								header("Location:./route/reception.php");
+								break;
+							} else {
+								// header("Location:./route/reception.php");
+								echo "<alert>Enter a valid user typr</alert>";
+							}
+						}

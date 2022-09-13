@@ -5,18 +5,19 @@
 	<title>Sign in</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/body.css">
+	<link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="./vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="./vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="./vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="./vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="./vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="./css/util.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" type="text/css" href="./css/body.css">
 </head>
 
 <body>
@@ -34,13 +35,14 @@
 				<span class="login100-form-title p-b-41">
 					Sign in
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" style="padding:10px;">
+				<form method="POST" class="login100-form validate-form p-b-33 p-t-5" style="padding:15px;">
 
 					<div class="wrap-input100 validate-input" data-validate="Select User Type">
 						<select class="input100" type="text" name="usrtype">
-							<option>Reception</option>
-							<option>Store Keeping</option>
-							<option>Admin</option>
+							<option value="sghouldShowError">---- No selection ---</option>
+							<option value="reception">Reception</option>
+							<option value="store">Store Keeping</option>
+							<option value="admin">Admin</option>
 						</select>
 						<span class="focus-input100 bi bi-shield-lock-fill" data-placeholder="&#xF341;"></span>
 					</div>
@@ -64,26 +66,31 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn" name="submitBtn">
 							Login
 						</button>
 					</div>
-
+					<?php
+					if (isset($_POST['submitBtn'])) {
+						// sign in into the system
+						verify_sign_in($_POST['usrtype'], $_POST['username'], $_POST['pass']);
+					}
+					?>
 				</form>
 			</div>
 		</div>
 	</div>
 
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/select2/select2.min.js"></script>
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/login.js"></script>
+	<script src="./vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="./vendor/animsition/js/animsition.min.js"></script>
+	<script src="./vendor/bootstrap/js/popper.js"></script>
+	<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./vendor/select2/select2.min.js"></script>
+	<script src="./vendor/daterangepicker/moment.min.js"></script>
+	<script src="./vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="./vendor/countdowntime/countdowntime.js"></script>
+	<script src="./js/main.js"></script>
+	<script src="./js/login.js"></script>
 
 </body>
 

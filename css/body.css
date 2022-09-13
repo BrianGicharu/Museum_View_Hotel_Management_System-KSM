@@ -5,6 +5,11 @@ body {
     max-height: 100%;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 #login_h1 {
     margin-bottom: -50px;
     font-weight: bolder;
@@ -15,10 +20,49 @@ body {
     text-shadow: 10px aliceblue;
 }
 
-select{
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: larger;
+}
+
+select {
     border: 0ch;
 }
-#showPwd{
+
+#showPwd {
     position: relative;
     background-color: inherit;
+}
+
+.nav_bar001,
+nav>ul>li {
+    text-align: justify;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 10%;
+}
+
+.nav_bar001,
+nav>ul>li:click {
+    color: red;
+}
+
+.nav_bar001 {
+    width: 150px;
+
+}
+
+.nav_bar001,
+nav>ul>li>a:hover {
+    color: chartreuse;
+    font-size: x-large;
+    text-shadow: 1px red;
+}
+
+.nav_height {
+    height: 100%;
+    width: 20%;
+    margin-bottom: 0px;
 }

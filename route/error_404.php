@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -18,13 +17,15 @@
     <link rel="stylesheet" type="text/css" href="./css/util.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" type="text/css" href="./css/body.css">
-
     <title>Document</title>
 </head>
 
-<body>
-    <div class="h1">
-        I am the store keeper
+<body style="background-color:black;max-height:100%">
+    <div class="container" style="margin:20%;margin-top:15%;">
+        <h1 style="color:red;position:relative;text-align:center;">ERROR!</h1>
+        <p style="color:wheat;font-size:xx-large;text-align:center;">
+            Requested Resource wasn't found on this server (404)
+        </p>
     </div>
 
     <script src="./vendor/jquery/jquery-3.2.1.min.js"></script>
