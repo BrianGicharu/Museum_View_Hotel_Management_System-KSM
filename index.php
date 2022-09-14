@@ -39,7 +39,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Select User Type">
 						<select class="input100" type="text" name="usrtype">
-							<option value="sghouldShowError">---- No selection ---</option>
+							<option value="shouldShowError">---- No selection ---</option>
 							<option value="reception">Reception</option>
 							<option value="store">Store Keeping</option>
 							<option value="admin">Admin</option>
