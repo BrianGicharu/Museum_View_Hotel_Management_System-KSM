@@ -72,7 +72,8 @@
 					</div>
 					<?php
 					if (isset($_POST['submitBtn'])) {
-						// sign in into the system
+						session_start();
+						// sign in into the system					
 						verify_sign_in($_POST['usrtype'], $_POST['username'], $_POST['pass']);
 					}
 					?>

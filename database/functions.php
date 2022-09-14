@@ -1,19 +1,23 @@
 <?php
 
 // File containing the PDO connection object
-include_once("./database/connection.php");
+include("connection.php");
+
+global $var;
 
 // This function assists in logging in
 function verify_sign_in($usrtype, $usrName, $usrPass)
 {
-    echo "<script>console.log(".$usrtype.");</script>";
-    
+    echo "<script>console.log(" . $usrtype . ");</script>";
+
     switch (strtolower($usrtype)) {
         case 'reception':
             header("Location:./route/reception.php");
-            // session($usrName);
+
             break;
         case 'admin':
+            global $var;
+            $var = $usrName;
             header("Location:./route/admin.php");
             break;
         case 'store':
@@ -22,6 +26,11 @@ function verify_sign_in($usrtype, $usrName, $usrPass)
         default:
             header("Location:./route/error_404.php");
     }
+}
+
+function exportUserName()
+{
+    return $var ?? null;
 }
 
 

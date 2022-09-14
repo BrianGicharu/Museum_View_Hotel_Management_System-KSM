@@ -44,23 +44,15 @@ nav>ul>li {
     padding-left: 10%;
 }
 
-.nav_bar001,
-nav>ul>li:click {
-    color: red;
-}
-
 .nav_bar001 {
     width: 150px;
-
 }
 
 .nav_bar001,
 nav>ul>li>a:hover {
     color: chartreuse;
     font-size: x-large;
-    text-shadow: 1px red;
 }
-
 .nav_height {
     height: 100%;
     width: 20%;
