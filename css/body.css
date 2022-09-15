@@ -1,6 +1,6 @@
 body {
     background-image: url('../images/bg-01.jpg');
-    background-repeat: round;
+    background-repeat: none;
     background-size: cover;
     height: 100%;
 }
@@ -37,11 +37,20 @@ select {
 
 .nav_bar001,
 nav>ul>li {
+    font-size: small;
     text-align: justify;
     color: white;
     text-decoration: none;
     padding: 10px;
     padding-left: 10%;
+}
+
+#page_header {
+    display: flex;
+}
+
+#page_header:last-child {
+    float: right;
 }
 
 .nav_bar001 {
@@ -51,13 +60,25 @@ nav>ul>li {
 .nav_bar001,
 nav>ul>li>a:hover {
     color: chartreuse;
-    font-size: x-large;
+    font-size: medium;
 }
+
 .nav_height {
     height: 100%;
     width: 20%;
-    margin-bottom: 0px;
 }
-svg{
+
+svg {
     caret-color: transparent;
+}
+
+table,
+tr,
+td {
+    border-style: solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+    border: 0 0 2px black;
+    border-collapse: collapse;
 }

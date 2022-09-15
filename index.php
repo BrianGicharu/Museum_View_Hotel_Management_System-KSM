@@ -5,7 +5,7 @@
 	<title>Sign in</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -71,8 +71,19 @@
 						</button>
 					</div>
 					<?php
-					if (isset($_POST['submitBtn'])) {
-						session_start();
+					if (isset($_POST['submitBtn'])) {						
+						// session vars saved to sql table | SESSION_ID | USER_NAME | USER_ID | SESSION_CREATION_DATE | SESSION_DESTROY_DATE
+						$sql = "INSERT INTO SESSION(SESSION_ID, USER_NAME, USER_ID, SESSION_CREATION_DATE, SESSION_DESTROY_DATE)
+													VALUES(:SESSION_ID, :USER_NAME, :USER_ID, :SESSION_CREATION_DATE, :SESSION_DESTROY_DATE);";
+
+						$statement = $conn->prepare($sql);
+						$statement->execute([
+							':SESSION_ID' => randID("S"),
+							':USER_NAME' => $_POST['username'],
+							':USER_ID' => "USER001",
+							':SESSION_CREATION_DATE' =>  $_SERVER['REQUEST_TIME'] ?? null,
+							':SESSION_DESTROY_DATE' => null
+						]);
 						// sign in into the system					
 						verify_sign_in($_POST['usrtype'], $_POST['username'], $_POST['pass']);
 					}

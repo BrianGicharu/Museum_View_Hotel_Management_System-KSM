@@ -6,18 +6,12 @@ include("connection.php");
 global $var;
 
 // This function assists in logging in
-function verify_sign_in($usrtype, $usrName, $usrPass)
-{
-    echo "<script>console.log(" . $usrtype . ");</script>";
-
+function verify_sign_in($usrtype, $usrName, $usrPass){
     switch (strtolower($usrtype)) {
         case 'reception':
             header("Location:./route/reception.php");
-
             break;
         case 'admin':
-            global $var;
-            $var = $usrName;
             header("Location:./route/admin.php");
             break;
         case 'store':
@@ -28,26 +22,10 @@ function verify_sign_in($usrtype, $usrName, $usrPass)
     }
 }
 
-function exportUserName()
+function randID($pre_text)
 {
-    return $var ?? null;
+    for ($i = 0; $i < 5; $i++) {
+        $pre_text .= rand(0, 9);
+    }
+    return $pre_text;
 }
-
-
-// //session build
-// function session($user){
-//     $_SESSION['user'] = $user;
-// }
-
-// // admin session
-// function admin()
-// {
-// }
-// // reception session
-// function reception()
-// {
-// }
-// // admin session
-// function store_keeping()
-// {
-// }
